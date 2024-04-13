@@ -13,7 +13,8 @@ Add git-filter-repo to PATH (even if only for this session):
 PATH=$PATH:$PWD/gfr
 ```
 
-Now call the `git-folder-kidnap.sh` script, it will guide you through the process.
+Now call the `git-folder-kidnap.sh` script, it will guide you through the process (you will want to be outside of this repository).
 ```
-git-folder-kidnap.sh
+cd ..
+./git-folder-kidnap/git-folder-kidnap.sh
 ```
