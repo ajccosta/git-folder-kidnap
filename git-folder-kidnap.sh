@@ -34,5 +34,6 @@ case $yn in
 esac
 
 main_branch=$(git remote show $(git remote show | head -n1) | sed -n '/HEAD branch/s/.*: //p')
+git pull
 git push -u origin $main_branch --force-with-lease
 echo "Finished! You should remove the ./$repo_name folder."
