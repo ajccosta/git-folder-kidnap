@@ -1,0 +1,3 @@
+[submodule "gfr"]
+	path = gfr
+	url = https://github.com/newren/git-filter-repo
