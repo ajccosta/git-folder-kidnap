@@ -5,7 +5,7 @@ repo_url=$1
 folders=$2 #',' separated folders
 
 if [ "$repo_url" == "" ]; then
-    read -p "What is URL of the repository you want to remove a folder from? " repo_url
+    read -p "What is URL of the repository you want to remove a folder or file from? " repo_url
 fi
 
 repo_name=$(echo $repo_url | rev | cut -d'/' -f1 | rev | sed 's/.git//g')
@@ -15,7 +15,7 @@ cd $repo_name
 
 
 if [ "$folders" == "" ]; then
-    read -p "[$repo_name] What is the folder you want to remove? " folders
+    read -p "[$repo_name] What is the folder or file you want to remove? " folders
 fi
 
 i=1
@@ -29,7 +29,7 @@ while [[ "$exiting" == "false" ]] ; do
     dir=$(echo "$folders" | cut -d, -f$i);
 
     if [[ "$dir" == "" ]]; then
-        read -p "[$repo_name] Do you want to remove more folders? If yes, which one, else say 'n'. " dir
+        read -p "[$repo_name] Do you want to remove more folders or files? If yes, which one, else say 'n'. " dir
         case $dir in
             [Nn]* ) echo "[$repo_name] Continuing."; exiting="true"=;;
             * ) : ;;
