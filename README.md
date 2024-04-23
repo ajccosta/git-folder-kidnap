@@ -1,11 +1,9 @@
 # git-folder-kidnap
 Uses git-filter-repo to kidnap a repository's folder into a new repository. 
 
-First, get git-filter-repo submodule
+Make sure to include the git-filer-repo submodule in your clone command:
 ```
-git submodule add https://github.com/newren/git-filter-repo gfr
-git submodule init
-git submodule update
+git clone https://github.com/ajccosta/git-folder-kidnap.git --recurse-submodules
 ```
 
 Add git-filter-repo to PATH (even if only for this session):
