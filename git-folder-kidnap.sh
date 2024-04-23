@@ -27,7 +27,7 @@ if [ "$repo_url_dest" == "" ]; then
 fi
 git remote add origin $repo_url_dest
 git remote -v
-read -p "[$repo_name/$repo_folder_path] Was the remote URL added? " yn
+read -p "[$repo_name/$repo_folder_path] Was the remote URL added [y/n]? " yn
 case $yn in
     [Nn]* ) exit;;
     * ) echo "";;
