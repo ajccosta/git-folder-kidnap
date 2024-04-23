@@ -36,4 +36,11 @@ esac
 main_branch=$(git remote show $(git remote show | head -n1) | sed -n '/HEAD branch/s/.*: //p')
 git pull
 git push -u origin $main_branch --force-with-lease
-echo "Finished! You should remove the ./$repo_name folder."
+
+
+cd ..
+read -p "Do you wish to remove any folder from the new repository [y/n]? " yn
+case $yn in
+    [Nn]* ) echo "Finished! You should remove the ./$repo_name folder."; exit;;
+    * ) ./git-folder-kidnap/git-folder-remove.sh $repo_url_dest;;
+esac
