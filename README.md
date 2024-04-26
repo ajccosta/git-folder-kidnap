@@ -36,3 +36,10 @@ Again, you may supply the arguments immediately:
 cd ..
 ./git-folder-kidnap/git-folder-remove.sh <repo url> <folder1,folder2,file3,...,fileN>
 ```
+
+### Warnings
+If you have a (local) copy of the repository you changed, you should reset it! To do this, simply fetch from remote and do a hard reset, likely to be done (might change if your remote is not named `origin`) with the following commands:
+```
+git fetch origin
+git reset --hard origin
+```
